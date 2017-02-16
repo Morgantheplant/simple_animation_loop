@@ -1,0 +1,26 @@
+{
+  "name": "simple_animation_loop",
+  "version": "1.0.0",
+  "description": "simple rAF wrapper to queue multiple animations ",
+  "main": "animationLoop.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Morgantheplant/simple_animation_loop.git"
+  },
+  "keywords": [
+    "rAF",
+    "requestAnimationFrame",
+    "wrapper",
+    "animations",
+    "queue"
+  ],
+  "author": "morgantheplant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Morgantheplant/simple_animation_loop/issues"
+  },
+  "homepage": "https://github.com/Morgantheplant/simple_animation_loop#readme"
+}
