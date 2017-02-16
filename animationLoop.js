@@ -7,15 +7,16 @@ function AnimationLoop(){
   this.isRunning = false;
   this.startTime = 0;
   this._time = 0;
-  this.updateLoop = function updateLoop(time){ 
-    this._time = time;
-    //loop through all animations call them and pass in time
-    for(var i = 0, len = this.animations.length; i < len; i++){
-        this.animations[i](time);
-    }
-    //store reference so we can cancel it later
-    this._rAF = rAF(this.updateLoop);
-  }.bind(this);
+}
+
+AnimationLoop.prototype.updateLoop = function updateLoop(time){ 
+  this._time = time;
+  //loop through all animations call them and pass in time
+  for(var i = 0, len = this.animations.length; i < len; i++){
+      this.animations[i](time);
+  }
+  //store reference so we can cancel it later
+  this._rAF = rAF(this.updateLoop);
 }
 
 AnimationLoop.prototype.start = function start(){
