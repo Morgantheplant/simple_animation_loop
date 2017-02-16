@@ -9,7 +9,7 @@ function AnimationLoop(){
   this._time = 0;
 }
 
-AnimationLoop.prototype.updateLoop = function updateLoop(time){ 
+AnimationLoop.prototype._updateLoop = function _updateLoop(time){ 
   this._time = time;
   //loop through all animations call them and pass in time
   for(var i = 0, len = this.animations.length; i < len; i++){
@@ -22,6 +22,7 @@ AnimationLoop.prototype.updateLoop = function updateLoop(time){
 AnimationLoop.prototype.start = function start(){
   if(!this.isRunning){
     this.isRunning = true;
+    this.updateLoop = this._updateLoop.bind(this);
     rAF(this.updateLoop);
   }
 };
