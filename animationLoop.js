@@ -4,6 +4,7 @@ var cAF = rAF_Polyfills.cancelAnimationFrame;
 
 function AnimationLoop(){
   this.animations = [];
+  this._animations = [];
   this.isRunning = false;
   this.startTime = 0;
   this._time = 0;
@@ -11,9 +12,11 @@ function AnimationLoop(){
 
 AnimationLoop.prototype._updateLoop = function _updateLoop(time){ 
   this._time = time;
-  //loop through all animations call them and pass in time
-  for(var i = 0, len = this.animations.length; i < len; i++){
-      this.animations[i](time);
+  // make a copy so animations can be removed during loop
+  this._animations = this.animations.slice();
+  while(this._animations.length){
+    // pop animations off and call each animation passin in time
+    this._animations.pop()(time);
   }
   //store reference so we can cancel it later
   this._rAF = rAF(this.updateLoop);
@@ -41,17 +44,14 @@ AnimationLoop.prototype.addAnimation = function addAnimation(animation){
 
 
 AnimationLoop.prototype.removeAnimation = function removeAnimation(animation) {
-  var index = -1;
-  if(animation){
-    for (var i = 0, len = this.animations.length; i < len; i++) {
-      if(this.animations[i] === animation){
-        index = i
-        break;
-      }
-    }
-    if (index > -1) {
-      this.animations.splice(index, 1);
-    }
+  var index = this.animations.indexOf(animation);
+  if (index !== -1) {
+    this.animations.splice(index, 1);
+  }
+  index = this._animations.indexOf(animation);
+  // remove animation if midway through loop
+  if(index !== -1){
+    this._animations.splice(index, 1);
   }
 };
 
