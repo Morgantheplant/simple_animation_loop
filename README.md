@@ -1,5 +1,13 @@
-# simple_animation_loop
-simple rAF wrapper to queue animations
+# Simple Animation Loop
+Simple rAF wrapper to queue animations. This also provides a basic reimplementation of browser timer functions (`setInterval` and `setTimeout`) to prevent timers from affecting animation performance. 
+
+installation:
+```
+npm install --save simple_animation_loop
+```
+
+
+
 
 # Documentation:
 
@@ -97,6 +105,12 @@ setInternal after `.start()` has been called.
 | delay | <code>Number</code> | The time, in milliseconds (thousandths of a second), the timer  should delay in between executions of the specified function. |
 
 
+## examples of usage:
+
+ - [smurf](https://github.com/Morgantheplant/smurf)
+
 <hr />
 
-Please submit/file any issues via GitHub
+Please submit any issues via GitHub.
+
+@morgantheplant
