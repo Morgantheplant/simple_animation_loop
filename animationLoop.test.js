@@ -155,12 +155,23 @@ test('setAnimationTimeout should mimic setTimeout functionality', function(){
 });
 
 test('setAnimationInterval should mimic setInterval functionality', function(){
-  var timedAnimation = jest.fn();
+  var intervalAnimation = jest.fn();
   animationLoop.start();
-  animationLoop.setAnimationInterval(timedAnimation, 1000);
+  animationLoop.setAnimationInterval(intervalAnimation, 1000);
   jest.runTimersToTime(1500);
-  expect(timedAnimation.mock.calls.length).toBe(1);
+  expect(intervalAnimation.mock.calls.length).toBe(1);
   expect(animationLoop.animations.length).toBe(1);
+});
+
+test('setAnimationInterval can be removed', function(){
+  var animation = jest.fn();
+  animationLoop.start();
+  var intervalAnimation = animationLoop.setAnimationInterval(animation, 1000);
+  jest.runTimersToTime(1500);
+  expect(animation.mock.calls.length).toBe(1);
+  expect(animationLoop.animations.length).toBe(1);
+  animationLoop.removeAnimation(intervalAnimation);
+  expect(animationLoop.animations.length).toBe(0);
 });
 
 

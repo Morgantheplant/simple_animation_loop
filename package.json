@@ -4,7 +4,8 @@
   "description": "simple rAF wrapper to queue multiple animations ",
   "main": "animationLoop.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "docs": "jsdoc2md --template docs-template.hbs --files animationLoop.js > README.md"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/Morgantheplant/simple_animation_loop#readme",
   "devDependencies": {
-    "jest": "^18.1.0"
+    "jest": "^18.1.0",
+    "jsdoc-to-markdown": "^3.0.0"
   }
 }

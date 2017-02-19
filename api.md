@@ -1,8 +1,3 @@
-# simple_animation_loop
-simple rAF wrapper to queue animations
-
-# Documentation:
-
 <a name="AnimationLoop"></a>
 
 ## AnimationLoop
@@ -96,7 +91,3 @@ setInternal after `.start()` has been called.
 | animation | <code>function</code> | A function to be executed every `delay` milliseconds. |
 | delay | <code>Number</code> | The time, in milliseconds (thousandths of a second), the timer  should delay in between executions of the specified function. |
 
-
-<hr />
-
-Please submit/file any issues via GitHub
