@@ -82,7 +82,7 @@ AnimationLoop.prototype.stop = function stop(){
  *
  * @param {Function} animation - callback that will be added to the main update loop.  
  *
- * @returns {Function} callback passed in
+ * @returns {Function} animation - callback passed in
 */
 AnimationLoop.prototype.addAnimation = function addAnimation(animation){
   if (typeof animation === "function" && this.animations.indexOf(animation) === -1) {
@@ -123,7 +123,7 @@ AnimationLoop.prototype.removeAnimation = function removeAnimation(animation) {
  * @param {Number} delay - The time, in milliseconds (thousandths of a second), the timer 
  * should wait before the specified function is executed. 
  *
- * @returns {Function} timeout callback returned so it can be canceled via `removeAnimation()`
+ * @returns {Function} timeout callback - returned so it can be canceled via `removeAnimation()`
 */
 AnimationLoop.prototype.setAnimationTimeout = function setAnimationTimeout(animation, delay){
   var startTime = this._time;
@@ -147,7 +147,7 @@ AnimationLoop.prototype.setAnimationTimeout = function setAnimationTimeout(anima
  * @param {Number} delay - The time, in milliseconds (thousandths of a second), the timer 
  * should delay in between executions of the specified function.
  *
- * @returns {Function} interval callback returned so it can be canceled via `removeAnimation()`
+ * @returns {Function} interval callback - returned so it can be canceled via `removeAnimation()`
 */
 AnimationLoop.prototype.setAnimationInterval = function setAnimationInterval(animation, interval){
   var startTime = this._time;
@@ -165,7 +165,7 @@ AnimationLoop.prototype.setAnimationInterval = function setAnimationInterval(ani
 *
 * @method
 *
-* @returns {Number} high resolution timestamp
+* @returns {Number} DOMHighResTimeStamp - high resolution timestamp
 */
 
 AnimationLoop.prototype.getTime = function(){

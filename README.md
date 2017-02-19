@@ -56,7 +56,7 @@ Adds a callback to the update loop and prevents the same callback from being
 added twice.
 
 **Kind**: instance method of <code>[AnimationLoop](#AnimationLoop)</code>  
-**Returns**: <code>function</code> - callback passed in  
+**Returns**: <code>function</code> - animation - callback passed in  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -82,7 +82,7 @@ degrading performance of the main update loop. It is recommended to use this ove
 setTimeout after `.start()` has been called.
 
 **Kind**: instance method of <code>[AnimationLoop](#AnimationLoop)</code>  
-**Returns**: <code>function</code> - timeout callback returned so it can be canceled via `removeAnimation()`  
+**Returns**: <code>function</code> - timeout callback - returned so it can be canceled via `removeAnimation()`  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -97,7 +97,7 @@ degrading performance of the main update loop. It is recommended to use this ove
 setInternal after `.start()` has been called.
 
 **Kind**: instance method of <code>[AnimationLoop](#AnimationLoop)</code>  
-**Returns**: <code>function</code> - interval callback returned so it can be canceled via `removeAnimation()`  
+**Returns**: <code>function</code> - interval callback - returned so it can be canceled via `removeAnimation()`  
 
 | Param | Type | Description |
 | --- | --- | --- |
