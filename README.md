@@ -108,6 +108,7 @@ setInternal after `.start()` has been called.
 ## examples of usage:
 
  - [smurf](https://github.com/Morgantheplant/smurf)
+ - [platform](http://moogl.herokuapp.com/)
 
 <hr />
 
